@@ -15,12 +15,12 @@ import React from "react";
 
 // const car = () => <div>This is car component</div>;
 
-export default () => (
+export default props => (
   <div>
-    <p>This is car component</p>
+    <h3>Car name: {props.name}</h3>
     <p>
-      Today your lucky number is:{" "}
-      <strong>{Math.round(Math.random() * 10)}</strong>
+     Year:
+      <strong>{props.year}</strong>
     </p>
   </div>
 );
