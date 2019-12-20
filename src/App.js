@@ -15,6 +15,7 @@ class App extends Component {
         <h1 style={{ color: "green", fontSize: "120px" }}> Hello, World!</h1>
         <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
         <Car />
+        <Car />
       </div>
     );
   }
