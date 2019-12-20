@@ -15,10 +15,11 @@ class App extends Component {
         <h1 style={{ color: "green", fontSize: "120px" }}> Hello, World!</h1>
         <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
 
-
-        <Car name ={'Ford'}  year={2018}/>
-        <Car name= "Audi" year={2017} />
-        <Car name= {'Mazda'} year={2010} />
+        <Car name={"Ford"} year={2018} />
+        <Car name="Audi" year={2017}>
+          <p style={{color: 'red'}}>Sound</p>
+          </Car>
+        <Car name={"Mazda"} year={2010} />
       </div>
     );
   }

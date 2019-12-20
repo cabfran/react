@@ -22,5 +22,6 @@ export default props => (
      Year:
       <strong>{props.year}</strong>
     </p>
+    { props.children}
   </div>
 );
