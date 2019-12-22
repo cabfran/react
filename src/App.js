@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.module.scss";
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 import Car from "./car/Car";
 
 class App extends Component {
@@ -13,8 +13,8 @@ constructor(props) {
   this.state = {
     cars: [
       { name: "Ford", year: "2018" },
-      { name: "Audi", year: "2017" },
-      { name: "Mazda", year: "2010" }
+      // { name: "Audi", year: "2017" },
+      // { name: "Mazda", year: "2010" }
     ],
     pageTitle: "React components",
     showCars: false
