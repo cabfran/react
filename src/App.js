@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
-import "./App.css";
+import "./App.module.scss";
 import { render } from "@testing-library/react";
 import Car from "./car/Car";
 
 class App extends Component {
-  state = {
+
+
+constructor(props) {
+  super(props)
+
+  this.state = {
     cars: [
       { name: "Ford", year: "2018" },
       { name: "Audi", year: "2017" },
@@ -14,6 +19,9 @@ class App extends Component {
     pageTitle: "React components",
     showCars: false
   };
+}
+
+  
 
   toggleCarsHandler = () => {
     this.setState({
@@ -58,18 +66,26 @@ class App extends Component {
 
     return (
       <div style={divStyle}>
-        <h1 style={{ color: "green", fontSize: "120px" }}>
+        {/* <h1 style={{ color: "green", fontSize: "120px" }}>
           {" "}
           {this.state.pageTitle}
+        </h1> */}
+        <h1 style={{ color: "green", fontSize: "120px" }}>
+          {" "}
+          {this.props.title}{" "}
         </h1>
         <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
 
         <button onClick={this.toggleCarsHandler}> Toggle cars </button>
-        <div style ={{
-          width:400,
-          margin:'auto',
-          paddingTop:'20px'
-        }}>{cars}</div>
+        <div
+          style={{
+            width: 400,
+            margin: "auto",
+            paddingTop: "20px"
+          }}
+        >
+          {cars}
+        </div>
       </div>
     );
   }

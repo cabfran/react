@@ -18,7 +18,7 @@ const Car = props => {
     boxShadow: "0 4px 5 px 0 rgba (0, 0, 0, .14)",
     ":hover": {
       border: "1px solid orange",
-      boxShadow: "0 4px 15px 0 rgba(0, 0, 0, .25)",
+      boxShadow: "0 10px 15px 0 rgba(255, 0, 0, .25)",
       cursor: "pointer"
     }
   };
