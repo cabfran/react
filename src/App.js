@@ -65,8 +65,11 @@ class App extends Component {
         <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
 
         <button onClick={this.toggleCarsHandler}> Toggle cars </button>
-
-        {cars}
+        <div style ={{
+          width:400,
+          margin:'auto',
+          paddingTop:'20px'
+        }}>{cars}</div>
       </div>
     );
   }
