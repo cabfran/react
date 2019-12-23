@@ -3,25 +3,23 @@ import React, { Component } from "react";
 import "./App.module.scss";
 // import { render } from "@testing-library/react";
 import Car from "./car/Car";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import Counter from "./Counter/Counter";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
 
-
-constructor(props) {
-  super(props)
-
-  this.state = {
-    cars: [
-      { name: "Ford", year: "2018" },
-      // { name: "Audi", year: "2017" },
-      // { name: "Mazda", year: "2010" }
-    ],
-    pageTitle: "React components",
-    showCars: false
-  };
-}
-
-  
+    this.state = {
+      cars: [
+        { name: "Ford", year: "2018" }
+        // { name: "Audi", year: "2017" },
+        // { name: "Mazda", year: "2010" }
+      ],
+      pageTitle: "React components",
+      showCars: false
+    };
+  }
 
   toggleCarsHandler = () => {
     this.setState({
@@ -44,14 +42,14 @@ constructor(props) {
     this.setState({ cars });
   }
 
-  componentWillMount () {
+  componentWillMount() {
     console.log("App componentWillMount");
   }
   componentDidMount() {
     console.log("App componentDidMount");
   }
   render() {
-        console.log("App render");
+    console.log("App render");
 
     const divStyle = {
       textAlign: "center"
@@ -61,13 +59,17 @@ constructor(props) {
     if (this.state.showCars) {
       cars = this.state.cars.map((car, index) => {
         return (
-          <Car
-            key={index}
-            name={car.name}
-            year={car.year}
-            onDelete={this.deleteHandler.bind(this, index)}
-            onChangeName={event => this.onChangeName(event.target.value, index)}
-          />
+          <ErrorBoundary key={index}>
+            <Car
+              key={index}
+              name={car.name}
+              year={car.year}
+              onDelete={this.deleteHandler.bind(this, index)}
+              onChangeName={event =>
+                this.onChangeName(event.target.value, index)
+              }
+            />
+          </ErrorBoundary>
         );
       });
     }
@@ -82,8 +84,10 @@ constructor(props) {
           {" "}
           {this.props.title}{" "}
         </h1>
-        <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
+        <Counter />
+        <hr />
 
+        <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
         <button onClick={this.toggleCarsHandler}> Toggle cars </button>
         <div
           style={{
