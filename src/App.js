@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
-import "./App.module.scss";
-// import { render } from "@testing-library/react";
+import "./App.scss";
 import Car from "./car/Car";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 import Counter from "./Counter/Counter";
@@ -61,7 +59,6 @@ class App extends Component {
         return (
           <ErrorBoundary key={index}>
             <Car
-              key={index}
               name={car.name}
               year={car.year}
               onDelete={this.deleteHandler.bind(this, index)}
@@ -80,15 +77,18 @@ class App extends Component {
           {" "}
           {this.state.pageTitle}
         </h1> */}
-        <h1 style={{ color: "green", fontSize: "120px" }}>
-          {" "}
-          {this.props.title}{" "}
-        </h1>
+        <h1>{this.props.title}</h1>
         <Counter />
         <hr />
 
-        <p style={{ color: "orange", fontSize: "60px" }}>Hello </p>
-        <button onClick={this.toggleCarsHandler}> Toggle cars </button>
+        <button
+          style={{ marginTop: 20 }}
+          className={"AppButton"}
+          onClick={this.toggleCarsHandler}
+        >
+          Toggle cars
+        </button>
+
         <div
           style={{
             width: 400,

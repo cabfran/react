@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import Auxiliary from '../hoc/Auxillary'
+import Auxiliary from "../hoc/Auxiliary";
 export default class Counter extends Component {
   state = {
     counter: 0
   };
 
-  addCounter = () => [
-    this.setState({
-      counter: this.state.counter + 1
-    })
-  ];
+  addCounter = () => {
+    // this.setState({
+    //   counter: this.state.counter + 1
+    // })
+    this.setState(prevState => {
+      return {
+        counter: prevState.counter + 1
+      };
+    });
+  };
+
   render() {
     return (
       <Auxiliary>
